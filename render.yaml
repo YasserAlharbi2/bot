@@ -2,5 +2,5 @@ services:
   - type: web
     name: flask-bot
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: ./render-build.sh
     startCommand: gunicorn app:app
