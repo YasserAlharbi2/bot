@@ -13,14 +13,15 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def run_bot(filepath):
     # 1. open webdriver
-    options = uc.ChromeOptions()
-    options.binary_location = "/usr/bin/chromium"
-    options.add_argument('--headless')  # ضروري لـ Render أو السيرفرات
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
 
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    chrome_options.binary_location = "/usr/bin/chromium-browser"  # جرب هذا المسار
+    # أو "/usr/bin/google-chrome" أو "/usr/bin/chromium" حسب اللي متوفر
 
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
     # 2. Open Login Page
     driver.get("https://sysdawa.moia.gov.sa/login")
