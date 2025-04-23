@@ -11,6 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def run_bot(filepath):
     # 1. open webdriver
     options = uc.ChromeOptions()
+    options.binary_location = "/usr/bin/google-chrome"
     options.add_argument('--headless')  # ضروري لـ Render أو السيرفرات
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
