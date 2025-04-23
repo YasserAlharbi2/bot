@@ -15,7 +15,9 @@ from selenium.webdriver.support import expected_conditions as EC
 def run_bot(filepath):
     # 1. open webdriver
     options = uc.ChromeOptions()
-    options.headless = True
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
     driver = uc.Chrome(options=options)
 
     # 2. Open Login Page
