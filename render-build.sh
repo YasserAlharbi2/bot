@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
-# تثبيت Chromium
-apt-get update
-apt-get install -y chromium
+#!/bin/bash
 
-# تستكمل بعدها تثبيت باقي المتطلبات
+apt-get update && apt-get install -y chromium
+
 pip install -r requirements.txt
