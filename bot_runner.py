@@ -22,7 +22,10 @@ def run_bot(filepath):
     chrome_options.binary_location = "/usr/bin/chromium-browser"  # جرب هذا المسار
     # أو "/usr/bin/google-chrome" أو "/usr/bin/chromium" حسب اللي متوفر
 
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    driver = webdriver.Chrome(
+    service=Service(ChromeDriverManager().install()),
+    options=chrome_options
+    )
 
     # 2. Open Login Page
     driver.get("https://sysdawa.moia.gov.sa/login")
