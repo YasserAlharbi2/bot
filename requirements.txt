@@ -3,3 +3,4 @@ gunicorn
 selenium
 openpyxl
 undetected-chromedriver
+pandas
