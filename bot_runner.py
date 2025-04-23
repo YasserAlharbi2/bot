@@ -15,12 +15,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def run_bot(filepath):
     # 1. open webdriver
     options = uc.ChromeOptions()
-    options.binary_location = "/usr/bin/chromium"  # بعد التثبيت غالباً يكون هذا هو المسار الصحيح
-
-    options.add_argument("--headless")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-
+    options.headless = True
     driver = uc.Chrome(options=options)
 
     # 2. Open Login Page
